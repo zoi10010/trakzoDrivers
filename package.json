@@ -1,0 +1,66 @@
+{
+  "name": "pmdriver",
+  "productName": "pmdriver",
+  "version": "1.0.0",
+  "main": "main.js",
+  "homepage": "https://service.electron.build",
+  "description": "Enhance your Productivity to next level with TrakZo.",
+  "license": "MIT",
+  "author": {
+    "name": "TeamZoi",
+    "email": "team@zoifintech.com",
+    "url": "https://home.trakzo.ai/"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "electronVersion": "1.0.1",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --linux",
+    "rebuild": "electron-rebuild -f -w serialport"
+  },
+  "build": {
+    "appId": "pmdriver_1.0.0",
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "https://mszoiftspl.com/linuxupdates/"
+      }
+    ],
+    "productName": "pmdriver",
+    "extraFiles": [
+      "assets"
+    ],
+    "linux": {
+      "icon": "build/icons",
+      "target": [
+        "AppImage"
+      ],
+      "category": "Utility"
+    }
+  },
+  "dependencies": {
+    "cron": "^1.8.2",
+    "find-process": "^1.4.5",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.33",
+    "electron": "^8.5.5",
+    "electron-builder": "^22.13.1",
+    "electron-packager": "^15.4.0",
+    "electron-prebuilt": "1.0.1",
+    "electron-rebuild": "^2.3.5",
+    "electron-winstaller": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shammi-patne/ProductivityMonitor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shammi-patne/ProductivityMonitor/issues"
+  }
+}
